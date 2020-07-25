@@ -55,6 +55,7 @@ def process():
             return resumeText
 
         # importing the necessary package of the nltk for text processing
+        nltk.download('all')
         nltk.download('stopwords')
         nltk.download('punkt')
 
