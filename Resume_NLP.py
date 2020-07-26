@@ -108,6 +108,13 @@ len(input_resume_w)
 input_jd_w = totalWords_jd
 len(input_jd_w)
 
+counter = 0
+for i in input_resume_cleaned.split():
+    if i == 'cid':
+        counter = counter + 1
+if counter > 20:
+    print("Issue with resume format")
+
 # Calculating the score of how many distinct words in jd are present in resume
 score = 0
 for word_1 in input_jd_w:
@@ -192,7 +199,6 @@ print(le_name_mapping)
 filename3 = 'le.pkl'
 pickle.dump(le, open(filename3, 'wb'))
 
-
 resumeDataSet.head()
 
 requiredText = resumeDataSet['cleaned_resume'].values
@@ -248,5 +254,3 @@ print(le.inverse_transform(prediction_final))
 # Creating a pickle file for the classifier
 filename = 'resume_prediction.pkl'
 pickle.dump(clf, open(filename, 'wb'))
-
-
