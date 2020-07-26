@@ -54,8 +54,7 @@ def process():
             resumeText = re.sub('\s+', ' ', resumeText)  # remove extra whitespace
             return resumeText
 
-        # importing the necessary package of the nltk for text processing
-        nltk.download('all')
+        # importing the necessary package of the nltk for text processin
         nltk.download('stopwords')
         nltk.download('punkt')
 
